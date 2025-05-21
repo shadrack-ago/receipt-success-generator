@@ -53,7 +53,7 @@ const ReceiptForm = ({ receiptData, setReceiptData }: ReceiptFormProps) => {
     <div className="space-y-4">
       <div className="grid grid-cols-1 gap-4">
         <div className="space-y-2">
-          <Label htmlFor="amount">Amount (KES)*</Label>
+          <Label htmlFor="amount" className="text-receipt-darkPurple">Amount (KES)*</Label>
           <Input
             id="amount"
             name="amount"
@@ -61,11 +61,12 @@ const ReceiptForm = ({ receiptData, setReceiptData }: ReceiptFormProps) => {
             value={receiptData.amount}
             onChange={handleChange}
             required
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="phoneNumber">Phone Number*</Label>
+          <Label htmlFor="phoneNumber" className="text-receipt-darkPurple">Phone Number*</Label>
           <Input
             id="phoneNumber"
             name="phoneNumber"
@@ -73,11 +74,12 @@ const ReceiptForm = ({ receiptData, setReceiptData }: ReceiptFormProps) => {
             value={receiptData.phoneNumber}
             onChange={handleChange}
             required
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="transactionNumber">Transaction Number*</Label>
+          <Label htmlFor="transactionNumber" className="text-receipt-darkPurple">Transaction Number*</Label>
           <Input
             id="transactionNumber"
             name="transactionNumber"
@@ -85,69 +87,75 @@ const ReceiptForm = ({ receiptData, setReceiptData }: ReceiptFormProps) => {
             value={receiptData.transactionNumber}
             onChange={handleChange}
             required
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="paidTo">Paid To*</Label>
+          <Label htmlFor="paidTo" className="text-receipt-darkPurple">Paid To*</Label>
           <Input
             id="paidTo"
             name="paidTo"
-            placeholder="e.g. Simbisa Ruiru Delta"
+            placeholder="e.g. Noble Forex"
             value={receiptData.paidTo}
             onChange={handleChange}
             required
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="payerMethodRef">Payer Method Ref</Label>
+          <Label htmlFor="payerMethodRef" className="text-receipt-darkPurple">Payer Method Ref</Label>
           <Input
             id="payerMethodRef"
             name="payerMethodRef"
             placeholder="e.g. RJJIWTORDB"
             value={receiptData.payerMethodRef}
             onChange={handleChange}
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="counterName">Counter Name*</Label>
+          <Label htmlFor="counterName" className="text-receipt-darkPurple">Counter Name*</Label>
           <Input
             id="counterName"
             name="counterName"
-            placeholder="e.g. Pizza Inn"
+            placeholder="e.g. Noble FX Traders"
             value={receiptData.counterName}
             onChange={handleChange}
             required
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="counterCode">Counter Code</Label>
+          <Label htmlFor="counterCode" className="text-receipt-darkPurple">Counter Code</Label>
           <Input
             id="counterCode"
             name="counterCode"
             placeholder="e.g. 173927"
             value={receiptData.counterCode}
             onChange={handleChange}
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="customerReference">Customer Reference</Label>
+          <Label htmlFor="customerReference" className="text-receipt-darkPurple">Customer Reference</Label>
           <Input
             id="customerReference"
             name="customerReference"
             placeholder="e.g. N/A"
             value={receiptData.customerReference}
             onChange={handleChange}
+            className="border-receipt-purple/30 focus:border-receipt-purple focus:ring-receipt-purple"
           />
         </div>
       </div>
 
       <Button 
-        className="w-full mt-6" 
+        className="w-full mt-6 bg-receipt-purple hover:bg-receipt-darkPurple" 
         onClick={handleGeneratePDF} 
         disabled={isGenerating || !isFormValid()}
       >

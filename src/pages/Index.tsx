@@ -28,7 +28,7 @@ const Index = () => {
     amount: "",
     phoneNumber: "",
     transactionNumber: "",
-    paidTo: "",
+    paidTo: "Noble Forex",
     payerMethodRef: "",
     counterName: "",
     counterCode: "",
@@ -37,8 +37,13 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-receipt-blue py-6">
-        <div className="container mx-auto">
+      <header className="bg-receipt-purple py-6">
+        <div className="container mx-auto flex items-center justify-center">
+          <img 
+            src="/lovable-uploads/6368c4b0-08d7-49bd-b942-ee5ae8bcde3d.png" 
+            alt="Noble Forex" 
+            className="h-12 mr-4"
+          />
           <h1 className="text-white text-3xl font-bold text-center">Receipt Generator</h1>
         </div>
       </header>
@@ -46,20 +51,20 @@ const Index = () => {
       <main className="container mx-auto py-8 px-4">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold mb-6">Enter Receipt Details</h2>
+            <h2 className="text-xl font-semibold mb-6 text-receipt-darkPurple">Enter Receipt Details</h2>
             <ReceiptForm receiptData={receiptData} setReceiptData={setReceiptData} />
           </div>
           
           <div>
-            <h2 className="text-xl font-semibold mb-6">Receipt Preview</h2>
+            <h2 className="text-xl font-semibold mb-6 text-receipt-darkPurple">Receipt Preview</h2>
             <ReceiptPreview receiptData={receiptData} />
           </div>
         </div>
       </main>
 
-      <footer className="bg-gray-100 py-4 mt-8">
-        <div className="container mx-auto text-center text-gray-500">
-          <p>© {new Date().getFullYear()} Receipt Generator Tool</p>
+      <footer className="bg-receipt-lightPurple py-4 mt-8">
+        <div className="container mx-auto text-center text-receipt-darkPurple">
+          <p>© {new Date().getFullYear()} Noble Forex Receipt Generator</p>
         </div>
       </footer>
     </div>

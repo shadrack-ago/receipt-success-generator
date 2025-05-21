@@ -12,10 +12,15 @@ export const generatePDF = async (receiptData: ReceiptData): Promise<void> => {
   receiptElement.style.margin = "0 auto";
   receiptElement.style.fontFamily = "Arial, sans-serif";
 
+  // Get the logo URL (this is embedded in the HTML as a Base64 string)
+  const logoImg = document.querySelector('header img') as HTMLImageElement;
+  const logoSrc = logoImg ? logoImg.src : '';
+
   const successHeader = `
-    <div style="padding: 24px; background-color: #f9fafb; text-align: center;">
+    <div style="padding: 24px; background-color: #E5DEFF; text-align: center;">
       <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 8px;">
-        <span style="font-size: 18px; font-weight: 500;">Payment Successful</span>
+        ${logoSrc ? `<img src="${logoSrc}" alt="Noble Forex" style="height: 32px; margin-right: 8px;">` : ''}
+        <span style="font-size: 18px; font-weight: 500; color: #6E59A5;">Payment Successful</span>
         <span style="margin-left: 8px; background-color: #22c55e; border-radius: 50%; padding: 4px;">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
@@ -24,7 +29,7 @@ export const generatePDF = async (receiptData: ReceiptData): Promise<void> => {
       </div>
       <p style="color: #6b7280;">${receiptData.date}</p>
 
-      <h1 style="font-size: 28px; font-weight: 700; color: #214584; margin-top: 16px;">
+      <h1 style="font-size: 28px; font-weight: 700; color: #8B5CF6; margin-top: 16px;">
         KES ${receiptData.amount}
       </h1>
 
@@ -72,7 +77,7 @@ export const generatePDF = async (receiptData: ReceiptData): Promise<void> => {
       <div style="padding: 20px; background-color: #f3f4f6; border-top: 1px solid #e5e7eb;">
         <div style="display: flex; justify-content: space-between;">
           <span style="color: #6b7280;">Amount Paid</span>
-          <span>KES ${receiptData.amount}</span>
+          <span style="color: #8B5CF6; font-weight: 500;">KES ${receiptData.amount}</span>
         </div>
       </div>
     </div>
@@ -80,10 +85,10 @@ export const generatePDF = async (receiptData: ReceiptData): Promise<void> => {
 
   const footerSection = `
     <div style="padding: 24px; text-align: center;">
-      <h3 style="text-transform: uppercase; font-weight: 500; margin-bottom: 8px;">Any questions & comment?</h3>
+      <h3 style="text-transform: uppercase; font-weight: 500; margin-bottom: 8px; color: #6E59A5;">Any questions & comment?</h3>
       <p style="color: #6b7280; margin-bottom: 16px;">Feel Free to Get In Touch</p>
       <div style="font-size: 14px; color: #6b7280;">
-        <p>support@receiptgenerator.com</p>
+        <p>support@nobleforex.com</p>
         <p>+254700000000</p>
       </div>
     </div>
@@ -130,7 +135,7 @@ export const generatePDF = async (receiptData: ReceiptData): Promise<void> => {
     );
     
     // Save the PDF
-    pdf.save(`Receipt-${receiptData.transactionNumber || "payment"}.pdf`);
+    pdf.save(`Noble-Forex-Receipt-${receiptData.transactionNumber || "payment"}.pdf`);
   } finally {
     // Clean up
     document.body.removeChild(receiptElement);

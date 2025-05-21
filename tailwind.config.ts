@@ -54,7 +54,10 @@ export default {
           foreground: 'hsl(var(--card-foreground))'
         },
         receipt: {
-          blue: '#214584',
+          blue: '#7E69AB', // Changed to purple
+          purple: '#8B5CF6', // Added main purple
+          darkPurple: '#6E59A5', // Added dark purple
+          lightPurple: '#E5DEFF', // Added light purple
           gray: '#8E9196',
           success: '#22c55e'
         }
