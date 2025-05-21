@@ -14,7 +14,7 @@ const ReceiptPreview = ({ receiptData }: ReceiptPreviewProps) => {
           <img 
             src="/lovable-uploads/6368c4b0-08d7-49bd-b942-ee5ae8bcde3d.png" 
             alt="Noble Forex" 
-            className="h-8"
+            className="h-10" // Increased from h-8 to h-10
           />
           <span className="text-lg font-medium text-receipt-darkPurple">Payment Successful</span>
           <span className="ml-2 bg-receipt-success rounded-full p-1">

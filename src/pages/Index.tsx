@@ -42,7 +42,7 @@ const Index = () => {
           <img 
             src="/lovable-uploads/6368c4b0-08d7-49bd-b942-ee5ae8bcde3d.png" 
             alt="Noble Forex" 
-            className="h-12 mr-4"
+            className="h-16 mr-4" // Increased from h-12 to h-16
           />
           <h1 className="text-white text-3xl font-bold text-center">Receipt Generator</h1>
         </div>
